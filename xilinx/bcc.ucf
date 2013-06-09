@@ -1,0 +1,104 @@
+# UCF constraints file for bone fpga FPGA in XC3S200AVQ100
+
+# We're running this part with VCCAUX = 3.3V
+CONFIG VCCAUX=3.3;
+
+# main clock input
+NET "FPGA_CLK50"  LOC = "P43"  ;
+NET "FPGA_CLK50" TNM_NET = "FPGA_CLK50";
+TIMESPEC "TS_FPGA_CLK50" = PERIOD "FPGA_CLK50" 20 ns HIGH 50 %;
+NET "FPGA_CLK50" IOSTANDARD = LVCMOS33;
+
+# LEDS
+NET "USER0"  LOC = "P50" ;
+NET "USER0" IOSTANDARD = LVCMOS33;
+NET "USER1"  LOC = "P49" ;
+NET "USER1" IOSTANDARD = LVCMOS33;
+
+# Buttons
+#NET "BTN0"  LOC = "P21" ;
+#NET "BTN0" IOSTANDARD = LVCMOS33;
+#NET "BTN1"  LOC = "P7" ;
+#NET "BTN1" IOSTANDARD = LVCMOS33;
+
+# SPI Flash Interface
+NET "FLASH_CS"  LOC = "P27" ;
+NET "FLASH_MOSI"  LOC = "P46" ;
+#NET "FLASH_MISO"  LOC = "P51" ;
+NET "FLASH_*" IOSTANDARD = LVCMOS33;
+
+# SPI Mode Inputs
+#NET "M1"  LOC = "P23" ;
+#NET "M1" IOSTANDARD = LVCMOS33;
+#NET "M2"  LOC = "P24" ;
+#NET "M2" IOSTANDARD = LVCMOS33;
+
+# SPI Interface to Flash or Beagle
+NET "FPGA_CS"  LOC = "P39" ;
+NET "FPGA_MOSI"  LOC = "P68" ;
+NET "FPGA_MISO"  LOC = "P52" ;
+NET "FPGA_SCLK"  LOC = "P53" ;
+NET "FPGA_SCLK"  CLOCK_DEDICATED_ROUTE ;
+NET "FPGA_SCLK" TNM_NET = "FPGA_SCLK";
+TIMESPEC "TS_FPGA_SCLK" = PERIOD "FPGA_SCLK" 20 ns HIGH 50 %;
+NET "FPGA_*" IOSTANDARD = LVCMOS33;
+
+# Off-board headers via adapter
+NET "JA<0>" LOC = "P99" ;
+NET "JA<1>" LOC = "P94" ;
+NET "JA<2>" LOC = "P90" ;
+NET "JA<3>" LOC = "P88" ;
+NET "JA<4>" LOC = "P98" ;
+NET "JA<5>" LOC = "P93" ;
+NET "JA<6>" LOC = "P89" ;
+NET "JA<7>" LOC = "P86" ;
+
+NET "JB<0>" LOC = "P85" ;
+NET "JB<1>" LOC = "P83" ;
+NET "JB<2>" LOC = "P77" ;
+NET "JB<3>" LOC = "P72" ;
+NET "JB<4>" LOC = "P84" ;
+NET "JB<5>" LOC = "P78" ;
+NET "JB<6>" LOC = "P73" ;
+NET "JB<7>" LOC = "P71" ;
+
+#NET "JC<0>" LOC = "P70" ;
+#NET "JC<1>" LOC = "P64" ;
+#NET "JC<2>" LOC = "P61" ;
+#NET "JC<3>" LOC = "P59" ;
+#NET "JC<4>" LOC = "P65" ;
+#NET "JC<5>" LOC = "P62" ;
+#NET "JC<6>" LOC = "P60" ;
+#NET "JC<7>" LOC = "P57" ;
+NET "J*" IOSTANDARD = LVCMOS33;
+
+# Bone GPMC hookups
+#NET "GPMC_AD<0>" LOC = "P4" ;
+#NET "GPMC_AD<1>" LOC = "P5" ;
+#NET "GPMC_AD<2>" LOC = "P36" ;
+#NET "GPMC_AD<3>" LOC = "P35" ;
+#NET "GPMC_AD<4>" LOC = "P6" ;
+#NET "GPMC_AD<5>" LOC = "P9" ;
+#NET "GPMC_AD<6>" LOC = "P40" ;
+#NET "GPMC_AD<7>" LOC = "P37" ;
+#NET "GPMC_AD<8>" LOC = "P13" ;
+#NET "GPMC_AD<9>" LOC = "P28" ;
+#NET "GPMC_AD<10>" LOC = "P20" ;
+#NET "GPMC_AD<11>" LOC = "P15" ;
+#NET "GPMC_AD<12>" LOC = "P29" ;
+#NET "GPMC_AD<13>" LOC = "P30" ;
+#NET "GPMC_AD<14>" LOC = "P16" ;
+#NET "GPMC_AD<15>" LOC = "P19" ;
+#NET "GPMC_CSN0" LOC = "P3" ;
+#NET "GPMC_CSN1" LOC = "P10" ;
+#NET "GPMC_CSN2" LOC = "P12" ;
+#NET "GPMC_WEN" LOC = "P31" ;
+#NET "GPMC_OEN" LOC = "P33" ;
+#NET "GPMC_ADVN_ALE" LOC = "P34" ;
+#NET "GPMC_BE0N_CLE" LOC = "P32" ;
+#NET "GPMC_BE1N" LOC = "P56" ;
+#NET "GPMC_CLK" LOC = "P41" ;
+#NET "GPMC*" IOSTANDARD = LVCMOS33;
+
+#NET "CLKOUT2" LOC = "P44" ;
+#NET "CLKOUT2" IOSTANDARD = LVCMOS33;
